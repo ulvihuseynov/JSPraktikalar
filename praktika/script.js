@@ -69,15 +69,52 @@ console.log("-----------------------------------------------");
 
   console.log("-----------------------------------------------");
 console.log("-----------------------------------------------");
- function getIdStudent() {
-  for (const student of students) {
-    if (student.id==8) {
-     let fullName=`${student.ad} ${student.soyad}`
-     console.log(fullName);
+//  function getIdStudent() {
+//   for (const student of students) {
+//     if (student.id==8) {
+//      let fullName=`${student.ad} ${student.soyad}`
+//      console.log(fullName);
      
-    }
-    }
-  }
+//     }
+//     }
+//   }
   
  
-  getIdStudent()
+//   getIdStudent()
+
+
+
+  // function largestPairSum (numbers) {
+  //   //TODO: Write your Code here
+  //   let sorted=numbers.sort((a,b)=>b-a)
+  //   return sorted[0]+sorted[1]
+  // }
+
+  // let arr=[10, 14, 2, 23, 20]
+  // console.log(largestPairSum(arr));
+  function lowercaseCount(str){
+    //How many?
+  let regex=/a-z/
+  let count=0
+//   if(regex.test(str)){
+//  count+=1
+//   }
+//   return count
+console.log(regex.test(str));
+
+}
+
+console.log(lowercaseCount('ABCVyroq'));
+
+
+Array.prototype.myMap=function(callback){
+let newArray=[]
+
+for (let i = 0; i < this.length; i++) {
+  let newEl=callback(this[i])
+   newArray.push(newEl)
+}
+return newArray
+}
+// let arr=[2,4,6,8,10]
+console.log([2,4,6,8,10].myMap((item)=>item*10))
