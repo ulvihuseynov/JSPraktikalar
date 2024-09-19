@@ -1,41 +1,8 @@
 
-async function getData() {
-const response=await fetch("https://northwind.vercel.app/api/orders?authuser=2");
-const data=await response.json()
-for (let i = 0; i < data.length; i++) {
-   if (data[i].id==11075) {
-    console.log(data[i]);
-    
-   }
-    
-}
-// console.log(data[0].id==11075);
 
-}
-getData();
-setTimeout(() => {
-    console.log('-------------------------------');
-console.log('-------------------------------');
-}, 1);
 
-async function getShipAddres() {
-    const response=await fetch("https://northwind.vercel.app/api/orders?authuser=2");
-    const data=await response.json()
-    let count=0
-    for (let i = 0; i < data.length; i++) {
-       if (data[i].shipAddress.country==="USA") {
-        console.log(data[i]);
-     count++;
-      
-       }
-        
-    }
-    // console.log(data[0].id==11075);
-    // return count
-    console.log(count);
     
-    }
-    getShipAddres();
+    
     
 
 
@@ -29571,20 +29538,253 @@ async function getShipAddres() {
           ]
         }
       ]
-data.filter(item=>{
-    if (item.id==11075) {
-        console.log(item);
-        
-    }
-}
-)
 
-let count=0
-data.filter(item=>{
-    if (item.shipAddress.country=="USA") {
-        console.log(item);
-        count++
-    }
+
+      //### Task 1: Grouping by a Property
+      //You have an array of objects representing students, and you need to group them by their grade.
+     
+      const students = [
+        { name: 'Alice', grade: 'A' },
+        { name: 'Bob', grade: 'B' },
+        { name: 'Charlie', grade: 'A' },
+        { name: 'David', grade: 'C' }
+      ];
+     
+    let  group='grade'
+    let sen=students.reduce((acc,student)=>{
+      let key=student[group]
+
+      if (!acc[key]) {
+        acc[key]=[]
+      }
+      acc[key].push(student)
+      return acc
+    },{})
+      console.log(sen);
+      
+      //*Objective:* Write a function to group students by their grade. The output should be an object where the keys are the grades and the values are arrays of student names.
+      
+      //*Expected Output:*
+      
+      {
+        // A: ['Alice', 'Charlie'],
+        // B: ['Bob'],
+        // C: ['David']
+      }
+      
+      
+      //### Task 2: Deep Flatten an Array
+      //Given an array that contains both nested arrays and single elements, write a function to flatten it completely.
+      
+      
+      const nestedArray = [1, [2, [3, 4], 5], [6], 7];
+     console.log(nestedArray.flat(2));
+     
+      
+      
+      //*Objective:* Flatten the array into a single array of numbers.
+      
+     // *Expected Output:*
+      
+      [1, 2, 3, 4, 5, 6, 7]
+      
+      
+      //### Task 3: Array Transformation with Filter, Map, and Reduce
+      //You have an array of transactions. Each transaction has an `amount` and a `type` ('income' or 'expense').
+      
+      
+      const transactions = [
+        { type: 'income', amount: 100 },
+        { type: 'expense', amount: 50 },
+        { type: 'income', amount: 200 },
+        { type: 'expense', amount: 150 }
+      ];
+      
+      
+      //*Objective:* 
+      //1. Use filter() to separate income and expenses.
+      //2. Use map() to create arrays of just the amounts.
+      //3. Use reduce() to calculate the total income and total expenses.
+     let group2='type'
+   let biz=  transactions.reduce((acc,amounts)=>{
+let key=amounts[group2]
+if (!acc[key]) {
+  acc[key]=[]
+} 
+acc[key].push(amounts)
+
+
+return acc
+     },
+
+    {})
+  
+    console.log(biz);
+    
+     
+      
+      //*Expected Output:*
+      
+      {
+        // totalIncome: 300,
+        // totalExpenses: 200
+      }
+      
+      
+      //### Task 4: Find the Most Frequent Element
+      //You have an array of strings, and you need to find the string that appears most frequently.
+      
+      
+     
+  
+ 
+  const words = ['apple', 'banana', 'apple', 'orange', 'banana', 'banana']; 
+
+let men=words.reduce((acc,item)=>{
+  if (acc[item]) {
+    acc[item]++
+  } else {
+    acc[item]=1
+  }
+  return acc
+},{})
+  console.log(men);
+  
+  //*Objective:* Write a function to find the most frequent string.
+      
+      //*Expected Output:*
+      
+      'banana'
+      
+      
+      //### Task 5: Array of Objects – Sort by Multiple Properties
+      //You have an array of people, and you need to sort them by age in ascending order. If two people have the same age, sort them by name in alphabetical order.
+      
+      
+      const people = [
+        { name: 'Alice', age: 25 },
+        { name: 'Bob', age: 25 },
+        { name: 'Charlie', age: 25 },
+        { name: 'David', age: 30 }
+      ];
+      let sorted=people.sort((a,b)=>a.age-b.age).sort()
+      console.log(sorted);
+      
+      //*Objective:* Sort by age first, and if two ages are the same, sort by name.
+      
+      //*Expected Output:*
+      
+      [
+        { name: 'Alice', age: 25 },
+        { name: 'Charlie', age: 25 },
+        { name: 'Bob', age: 30 },
+        { name: 'David', age: 30 }
+      ]
+      
+      
+      //### Task 6: Remove Duplicates from an Array
+     // Given an array with duplicate values, write a function to return a new array with only unique values.
+      
+      
+      const nums = [1, 2, 2, 3, 4, 4, 5];
+      let noDouble=nums.filter((item,index)=>{
+return nums.indexOf(item)==index
+      })
+      console.log(noDouble);
+      let set=new Set(nums)
+      console.log(Array.from(set));
+      
+      //*Objective:* Use filter() or Set to remove duplicates.
+      
+     // *Expected Output:*
+     // javascript
+      [1, 2, 3, 4, 5]
+      
+      
+     // ### Task 7: Chunk an Array into Subarrays
+     // Write a function that splits an array into smaller arrays (chunks) of a specified size.
+      
+      //javascript
+     
+     
+ 
+  
+   
+
+// let array=[0,1,2,3,4,5,6,7,8,9]
+// let size=2;
+// console.log(chunkingArray(array,size));
+function cahunk(array,size) {
+  let bos=[]
+  let n=array.length
+  let index=0
+  while (index<n) {
+   
+    bos.push(array.slice(index,index+size))
+    index+=size
+ 
+  }
+return bos
 }
-)
-console.log(count);
+
+let array=[0,1,2,3,4,5,6,7,8,9]
+let size=2;
+console.log(cahunk(array,size));
+
+     // *Objective:* Split the array into chunks of the given size.
+      
+     // *Expected Output:*
+     // javascript
+      [[1, 2, 3], [4, 5, 6], [7]]
+      
+      
+      //These tasks involve chaining multiple array methods and handling more complex data structures, which will challenge your understanding of JavaScript arrays.
+
+
+      function sumOfMinimums(arr) {
+        let sum=0
+      let bax=arr.map((item,index,array)=>{
+        // console.log(item)
+        let end= item.sort((a,b)=>a-b);
+        
+        
+       return sum+=end[0]
+      })
+     return sum
+      }
+     
+      
+    //  console.log( sumOfMinimums([ [ 1, 2, 3, 4, 5 ]       
+    //   , [ 5, 6, 7, 8, 9 ]      
+    //   , [ 20, 41, 34, 56, 100 ] 
+    //   ]));
+     
+   
+
+//       function wordCount(text) {
+//         let count=0
+//         let arr=text.trim().split(" ").filter(item=>item).length
+// console.log(arr);
+
+
+//       }
+
+//          let text=' Lorem  dolor sit amet consectetur adipisicing elit. Beatae, blanditiis.'
+//          wordCount(text)
+
+const filterBtn=document.querySelectorAll(".btn")
+const card=document.querySelectorAll(".card")
+filterBtn.forEach(btn=>{
+ btn.addEventListener("click",(e)=>{
+ document.querySelector(".active").classList.remove("active");
+ e.target.classList.add("active");
+
+ card.forEach(item=>{
+  item.classList.add("hide");
+
+  if (item.dataset.name === e.target.dataset.name || e.target.dataset.name==="all") {
+    item.classList.remove("hide");
+  }
+ })
+ })
+})
