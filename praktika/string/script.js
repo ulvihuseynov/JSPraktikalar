@@ -1,5 +1,5 @@
 // Bir string götürün və string-də olan saitlərin (a, e, i, o, u) sayını qaytaran funksiya yazın.
-
+// "use strict"
 function getVowel(str) {
   let vowel = "aeiou";
   let count = 0;
@@ -101,3 +101,49 @@ function repeatWord(text,word) {
 let sentence='Lorem ipsum, dolor  amet consectetur amet amet amet amet adipisicing elit. Vitae, quas. sit sit'
 let word='amet'
 console.log(repeatWord(sentence,word));
+
+console.log(this);
+
+let ned=function(){
+  console.log(this);
+  
+}
+ned()
+let obj={
+  name:'Ulvi',
+  'sur-name':'Huseynov',
+  age:23,
+  city:'Baku',
+  fullname:function(){
+    console.log(this);
+
+return   `Men ${this.name} ${this["sur-name"]} ve ${this.city}de yasayiram`
+
+
+}
+ 
+  
+}
+let key='name'
+console.log(obj.fullname());
+const {[key]:value}=obj
+
+console.log(value);
+function chunk(array,size) {
+  let flatArr=[]
+  let index=0
+  let n=array.length
+  while (index<n) {
+    flatArr.push(array.slice(index,index+size))
+
+    index+=size
+  }
+  return flatArr
+}
+let arr=[0,1,2,3,4,5,6,7,8,9]
+let size=2
+console.log(chunk(arr,size))
+
+
+const doc=document
+console.log(doc.querySelectorAll('a'));
