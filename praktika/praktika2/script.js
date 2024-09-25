@@ -223,3 +223,14 @@ book4.addBook('Kimsesiz ada')
 console.log(book3.books)
 console.log(book4.borrowBook('Poct qutusu'))
 console.log(book5.listAvailableBooks(true))
+
+
+function findUniq(arr) {
+  // do magic
+  return arr.filter((item,index)=>{
+   return arr.indexOf(item)==index
+  })
+}
+
+console.log(findUniq([ 1, 1, 1, 2, 1, 1 ])
+)

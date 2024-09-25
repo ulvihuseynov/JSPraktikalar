@@ -90,3 +90,31 @@ let bax=students.reduce((acc,studuent)=>{
 },{})
 
 console.log(bax);
+
+function arrayDiff(a, b) {
+return a.filter(item=>!b.includes(item))
+}
+
+
+console.log(arrayDiff([1,2,3], [1,2]))
+
+function persistence(num) {
+let arr=Array.from(String(num))
+let res
+if (arr.length==1) {
+   res =arr[0]*arr[1]
+
+}
+return res
+}
+console.log(persistence(98))
+//https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec/train/javascript
+//https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39/solutions
+//https://www.codewars.com/kata/5552101f47fc5178b1000050/train/javascript
+https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08/javascript
+function toNumberArray(stringarray){
+  return stringarray.map(element => {
+    return Number(element)
+  });
+}
+console.log(toNumberArray(['1','2','3']))
