@@ -1,32 +1,72 @@
-// const dragebl=document.querySelector('.dragebl')
-// const dropzone=document.querySelector(".dropzone")
-// let obj={}
-// dragebl.addEventListener("dragstart",()=>{
-// obj=this
+const draggable=document.querySelectorAll(".draggable")
+const dropzone=document.querySelector("#dropzone")
+
+dropzone.addEventListener('dragover',function(e){
+  e.preventDefault()
+})
+
+draggable.forEach(function(item){
+item.addEventListener('dragstart',function(e){
+e.dataTransfer.setData("text",e.target.id)
+  })
+})
+dropzone.addEventListener('drop',function(e){
+  e.preventDefault()
+  const data=e.dataTransfer.getData('text')
+  const element=document.getElementById(data)
+  dropzone.appendChild(element)
+})
+
+// function getThis() {
+//   const arrow=()=>{
+//     console.log(this)
+//   }
+
+// }
+// console.log(getThis())
+
+// let arr=[1,2,3,4]
+// arr.forEach(item=>{
+//   if (item>1) {
+//     console.log(item)
+//     return item
+//   }
+//   // return item
 // })
-// dropzone.addEventListener("dragover",(e)=>{
-//     e.preventDefault()
-// })
+// console.log(item)
 
-// dropzone.addEventListener('drop',()=>{
-//     this.append(obj)
-// })
-const draggable = document.querySelector('.draggable');
-const dropzone = document.querySelector('.dropzone');
 
-// Sürüklemə hadisəsi
-draggable.addEventListener('dragstart', function (event) {
-  event.dataTransfer.setData('text', event.target.id);
-});
 
-// Buraxma zonasına düşərkən
-dropzone.addEventListener('dragover', function (event) {
-  event.preventDefault();
-});
+function outer() {
+ let count =0
+function inner() {
+  return count++
+}
+   return inner
+}
 
-dropzone.addEventListener('drop', function (event) {
-  event.preventDefault();
-  const data = event.dataTransfer.getData('text');
-  const element = document.getElementById(data);
-  event.target.appendChild(element);
-});
+const end=outer()
+console.log(end())
+console.log(end())
+console.log(end())
+console.log(end())
+
+
+
+
+
+// function createMultiplier(factor) {
+//   return function(number) {
+//       return number * factor;
+//   };
+// }
+
+// const multiplyByTwo = createMultiplier(2);
+// console.log(multiplyByTwo(5)); // 10
+
+// const multiplyByThree = createMultiplier(3);
+// console.log(multiplyByThree(5)); // 15
+// let count=0
+// console.log(count--)
+// console.log(count--)
+// // console.log(--counct)

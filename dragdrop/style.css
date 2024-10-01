@@ -3,10 +3,11 @@
     height: 100px;
     background-color: seagreen;
     cursor: pointer;
+    margin: 4px;
 }
-.dropzone{
+#dropzone{
     width: 300px;
-    height: 300px;
+    height:120vh;
     background-color: red;
     position: absolute;
     right: 0;

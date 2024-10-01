@@ -1,0 +1,68 @@
+
+.todo-box{
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: Arial, Helvetica, sans-serif;
+margin-top: 30px;
+flex-direction: column;
+ } 
+.todo-header{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 20px;
+    justify-content: center;
+}
+.todo-header div input{
+height: 40px;
+width: 350px;
+padding: 0px 10px;
+border-radius: 10px;
+border: 2px solid green;
+font-size: 18px;
+outline: none;
+}
+.todo-header div input::placeholder{
+letter-spacing: 1.4px;
+color: green;
+font-size: 18px;
+}
+.todo-header div button{
+outline: none;
+    border: none;
+    background-color: rgb(0, 172, 0);
+    color: white;
+    border-radius: 10px;
+    height: 40px;
+    width: 80px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .7s;
+}
+
+.todo-header div button:hover{
+    background-color: green;
+}
+.todos{
+    padding: 0px 10px;
+    border: 1px solid green;
+    width:350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.icons{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+.icons span,.todos p{
+    font-size: 18px;
+    color: green;
+}
