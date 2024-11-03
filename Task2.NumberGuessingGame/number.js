@@ -1,33 +1,32 @@
 
 
+const minNum=1;
+const maxNum=100;
 
-const minNum=1
-const maxNum=100
-const answer=Math.floor(Math.random() *(maxNum-minNum+1))+minNum
-// console.log(answer)
-
+const randomNumber=Math.floor(Math.random()*(maxNum-minNum +1))+minNum
+// console.log(randomNumber)
 let attemps=0
-let guess 
+let guess
 let running=true
+
 while(running){
-guess=Number(window.prompt(`Guess a number between ${minNum} - ${maxNum}`))
-// console.log(typeof guess, guess)
+    attemps++
+guess=Number(prompt(`${minNum} - ${maxNum} arasinda ededler daxil ede bilersiz`))
+// console.log(guess)
 if (isNaN(guess)) {
-    window.alert("Please enter a valid number")
-}else if(guess<minNum || guess >maxNum){
-    window.alert("Please enter a valid number")
+    alert('Reqem daxil edin')
+}else if(guess < minNum || guess >maxNum){
+    alert('Kecerli reqem daxil edin')
 
 }else{
-    attemps++
-    if (guess<answer) {
-        window.alert('TOO LOW! TRY AGAIN!')
-    }else if(guess>answer){
-        window.alert('TOO HIGH! TRY AGAIN!')
-
+    if (guess<randomNumber) {
+        alert('Too low')
+    }else if(guess>randomNumber){
+        alert("Too high")
     }else{
-        window.alert(`CORRECT! The answer was ${guess}. It took you ${attemps} attemps`)
+        alert(`Correct answer ${guess}. ${attemps} cehdden`)
         running=false
     }
 }
-    // running=false
+   
 }
