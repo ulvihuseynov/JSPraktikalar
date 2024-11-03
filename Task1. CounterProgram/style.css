@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+   
+}
+.count-box{
+margin: 20px 0;
+}
+.count-box span{
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(61, 61, 61);
+}
+.btn-group{
+    display: flex;
+    gap: 30px;
+}
+.btn-group button{
+    border: none;
+    padding: 4px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgb(169, 167, 167);
+    color: white;
+    border-radius: 5px;
+}
+button#decrease{
+    background-color: red;
+}
+
+button#reset{
+    background-color: rgb(126, 125, 125);
+}
+button#increase{
+    background-color: green;
+}
