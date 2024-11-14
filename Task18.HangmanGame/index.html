@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hangman Game</h1>
+    <p>Gizlenmis sozu tapmaq ucun herf daxil edin</p>
+
+<div class="container">
+<svg height="250" width="250" class="graphic">
+
+
+<line x1="50" y1="20" x2="130" y2="20"/>
+<line x1="130" y1="20" x2="130" y2="50"/>   
+<line x1="50" y1="20" x2="50" y2="250"/>  
+<line x1="0" y1="250" x2="100" y2="250"/> 
+
+
+<circle cx="130" cy="80" r="30" class="item"/> 
+
+<line x1="130" y1="110" x2="130" y2="200" class="item"/> 
+
+<line x1="130" y1="140" x2="70" y2="90" class="item"/> 
+<line x1="130" y1="140" x2="180" y2="90" class="item"/> 
+
+
+<line x1="130" y1="200" x2="100" y2="230" class="item"/> 
+<line x1="130" y1="200" x2="160" y2="230" class="item"/> 
+
+</svg>
+<div id="wrong-letters">
+    <!-- <h3>hatali harfler</h3>
+    <span>a,b,c</span> -->
+</div>
+<div id="word">
+<!-- <div class="letter">c</div>
+<div class="letter">s</div>
+<div class="letter">s</div> -->
+
+</div>
+</div>
+<div id="popup-container">
+<div class="popup">
+    <h2 id="success-message"></h2>
+    <button id="play-again">Tekrar oyna</button>
+</div>
+</div>
+<div id="message" class="">
+<p>Bu herfi zaten girmisen</p>
+</div>
+<div id="attempt"></div>
+    <script src="./hangman.js"></script>
+</body>
+</html>
