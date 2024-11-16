@@ -1,0 +1,10 @@
+p{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 72, 116);
+}
+
+
+#map {
+    height: 100%;
+  }

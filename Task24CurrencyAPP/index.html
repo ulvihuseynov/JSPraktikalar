@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency APP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="main">
+            <div class="header">
+                <h4>Currency App</h4>
+            </div>
+            <div class="content">
+<input type="number" id="amount" placeholder="miqdar">
+<select  id="firstSelected">
+    <option >USD</option>
+    <option >EUR</option>
+    <option >RUB</option>
+    <option >TRY</option>
+    <option >RON</option>
+  
+</select>
+<select  id="secondSelected">
+    <option>USD</option>
+    <option >EUR</option>
+    <option >RUB</option>
+    <option selected>TRY</option>
+    <option >RON</option>
+  
+</select>
+<input type="number" id="result" placeholder="netice" readonly>
+
+            </div>
+            <button id="btn">change</button>
+        </div>
+        
+    </div>
+
+   <script type="module" src="./main.js"></script>
+</body>
+</html>

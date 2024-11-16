@@ -91,20 +91,91 @@ const myBox=document.querySelector("#mybox")
 // myBox.textContent='keyup'
 
 
-//     })
-const img=document.querySelector("img")
-myBox.addEventListener("click",()=>{
-    if (img.classList.contains('dNone')) {
-        // img.classList.toggle('dNone')
-        // myBox.textContent='Show'
-        myBox.textContent='Hide'
-        img.classList.toggle('dNone')
+// //     })
+// const img=document.querySelector("img")
+// myBox.addEventListener("click",()=>{
+//     if (img.classList.contains('dNone')) {
+//         // img.classList.toggle('dNone')
+//         // myBox.textContent='Show'
+//         myBox.textContent='Hide'
+//         img.classList.toggle('dNone')
 
-    }
-  else{
-      img.classList.toggle('dNone')
-    myBox.textContent='Show'
-  }
+//     }
+//   else{
+//       img.classList.toggle('dNone')
+//     myBox.textContent='Show'
+//   }
 
 
+// })
+
+
+// btns.forEach((btn,index)=>{
+  
+//   btn.addEventListener('mouseover',(e)=>{
+//    document.querySelector('.active').classList.remove('active')
+//     e.target.classList.add('active')
+//   })
+// })
+
+// btns.forEach((btn,index)=>{
+  
+//   btn.addEventListener('mouseout',(e)=>{
+//    document.querySelector('.active').classList.remove('active')
+//     e.target.classList.add('active')
+//   })
+// })
+// let btns=document.querySelectorAll(".myButtons")
+// btns.forEach((btn,index)=>{
+  
+//   btn.addEventListener('click',(e)=>{
+//    document.querySelector('.active').classList.remove('active')
+//     e.target.classList.add('active')
+//   })
+// })
+
+
+// let btn=document.createElement('button')
+// btn.classList.add('myButtons')
+// btn.textContent='Btn5'
+// // document.body.prepend(btn)
+// document.body.appendChild(btn)
+// // document.body.removeChild(btn)
+// btns=document.querySelectorAll('.myButtons')
+// console.log(btns)
+
+// btns.forEach(item=>{
+//   item.addEventListener('click',(e)=>{
+//     e.target.remove()
+//     btns=document.querySelectorAll('.myButtons')
+//     console.log(btns)
+//   })
+// })
+
+const btn=document.querySelector('.myButtons')
+
+btn.classList.remove("active")
+
+  // btn.addEventListener('mouseover',()=>{
+  //   btn.classList.toggle("hover")
+    
+  //   })
+
+
+
+  // btn.addEventListener('mouseout',()=>{
+  //   btn.classList.toggle("hover")
+    
+  //   })
+  btn.classList.add("active")
+btn.addEventListener('click',e=>{
+  e.target.classList.replace('active','disabled')
 })
+
+if (btn.classList.contains('active')) {
+btn.textContent='Button'
+} else {
+  btn.textContent='MyButton'
+
+  
+}

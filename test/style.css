@@ -86,3 +86,25 @@ border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
 }  
+.myButtons{
+  font-size: 2rem;
+  margin: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 50px;
+/*  */
+/* background-color: #858382; */
+display:block;}
+
+.active{
+  background-color: #3498db;
+  color: white;
+}
+.hover{
+  box-shadow: 0 0 10px rgb(152, 146, 146);
+}
+
+.disabled{
+  background-color: gray;
+  color: rgb(49, 51, 51);
+}
